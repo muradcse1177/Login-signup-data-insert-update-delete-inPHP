@@ -1,0 +1,18 @@
+<html>
+<body>
+<?php
+include('connection.php');
+$sql = "SELECT * FROM comments";
+$result = $connection->query($sql);
+echo "<table><tr><td>Name</td><td>Age</td><td></td><td></td>";
+while($query2=mysql_fetch_array($result))
+{
+echo "<tr><td>".$query2['name']."</td>";
+echo "<td>".$query2['age']."</td>";
+echo "<td><a href='update.php?id=".$query2['id']."'>Edit</a></td>";
+}
+?>
+</ol>
+</table>
+</body>
+</html>
